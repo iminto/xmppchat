@@ -1,0 +1,55 @@
+*.class
+*.log
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+*.pydevproject
+.project
+.metadata
+bin/**
+build/
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+/bin
+
+# gradle
+.gradle
+
+# idea
+.idea/
+*.iml
+*.ipr
+*.iws
+target/
+.DS_Store
+/test/src/test/resources/jdbc.properties
+/test/src/test/resources/log4j.properties
+/test/info.log.*
+/test/warn.log.*
+### Example user template template
+### Example user template
+
+gen
