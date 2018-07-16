@@ -21,7 +21,7 @@
     delete from chat_record
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insertSelective" parameterType="com.bai.front.dao.entity.ChatRecord" >
+  <insert id="insertSelective" parameterType="com.bai.front.dao.entity.ChatRecord" useGeneratedKeys="true" keyProperty="id">
     insert into chat_record
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >

@@ -1,7 +1,7 @@
 package com.bai.front.controller;
 
-import com.bai.front.dao.entity.ChatRecord;
 import com.bai.front.service.api.ChatService;
+import com.bai.front.service.model.ChatVO;
 import com.bai.front.service.model.ResultApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,7 +18,7 @@ public class ChatController {
 
     @RequestMapping(value="/send")
     @ResponseBody
-    public ResultApi<Boolean> saveInfo(@RequestBody ChatRecord chat){
+    public ResultApi<Boolean> saveInfo(@RequestBody ChatVO chat){
         return userInfoService.saveInfo(chat);
     }
 

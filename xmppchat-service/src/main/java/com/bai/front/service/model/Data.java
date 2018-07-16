@@ -1,8 +1,5 @@
 package com.bai.front.service.model;
 
-/**
- * Created by chenhaitao on 2018/5/14.
- */
 public class Data<T> {
 
     private int total; // 总记录数

@@ -5,9 +5,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
 
-/**
- * Created by chenhaitao on 2018/7/2.
- */
+
 public class ResultApi<T> implements Serializable {
 
     private int code ;
