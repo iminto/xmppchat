@@ -30,6 +30,7 @@ public class XmppConnUtil {
         try {
             configBuilder.setResource("xmppchat");
             configBuilder.setXmppDomain(domain);
+            configBuilder.setConnectTimeout(15000);
             connection = new XMPPTCPConnection(configBuilder.build());
             connection.connect();
             connection.login();
@@ -42,6 +43,9 @@ public class XmppConnUtil {
 
     public void sendMsg(String toUser,String msg) {
         try {
+            if(!connection.isConnected()){
+                getConn();
+            }
             ChatManager chatManager = ChatManager.getInstanceFor(connection);
             EntityBareJid jid = null;
             jid = JidCreate.entityBareFrom(toUser);
