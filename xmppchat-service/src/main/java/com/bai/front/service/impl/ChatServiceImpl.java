@@ -14,8 +14,6 @@ public class ChatServiceImpl implements ChatService {
 
     @Autowired
     ChatRecordMapper chatRecordMapper;
-    @Autowired
-    XmppConnUtil xmppConnUtil;
 
     @Override
     public ResultApi<Boolean> saveInfo(ChatVO chat) {
@@ -23,9 +21,10 @@ public class ChatServiceImpl implements ChatService {
         ChatRecord chatRecord=new ChatRecord();
         chatRecord.setToUser(chat.getToUser());
         chatRecord.setMsg(chat.getMsg());
+        XmppConnUtil conn=new XmppConnUtil();
         try {
-            xmppConnUtil.getConn();
-            xmppConnUtil.sendMsg(chat.getToUser(),chat.getMsg());
+            conn.getConn();
+            conn.sendMsg(chat.getToUser(),chat.getMsg());
             chatRecordMapper.insertSelective(chatRecord);
             api.setDataObj(chatRecord.getId());
             return api;

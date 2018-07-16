@@ -13,10 +13,8 @@ import org.jxmpp.jid.EntityBareJid;
 import org.jxmpp.jid.impl.JidCreate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import java.io.IOException;
 
-@Component
 public class XmppConnUtil {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
