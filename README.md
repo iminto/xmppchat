@@ -17,6 +17,9 @@ PC端可安装Gajim，跨所有平台
 安卓手机可安装Bruno或Xabber Dev
 
 #### 运行
+```
 mvn compile dependency:copy-depend
+
 java  -cp  $(echo target/dependency/*.jar | tr ' ' ':'):"target/classes" io.vertx.core.Launcher start sms.bai.starte
 r.MainVerticle
+```
