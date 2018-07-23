@@ -20,6 +20,5 @@ PC端可安装Gajim，跨所有平台
 ```
 mvn dependency:copy-dependencies
 
-java  -cp  $(echo target/dependency/*.jar | tr ' ' ':'):"target/classes" io.vertx.core.Launcher start sms.bai.starte
-r.MainVerticle
+java  -cp  $(echo target/dependency/*.jar | tr ' ' ':'):"target/classes" io.vertx.core.Launcher start sms.bai.starter.MainVerticle
 ```

@@ -12,6 +12,7 @@
   <properties>
     <vertx.version>3.5.2</vertx.version>
     <main.verticle>sms.bai.starter.MainVerticle</main.verticle>
+    <xmpp.version>4.2.4</xmpp.version>
   </properties>
 
   <dependencyManagement>
@@ -36,6 +37,42 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
       <version>${vertx.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-core</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-tcp</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-im</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-extensions</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-legacy</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-java7</artifactId>
+      <version>${xmpp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.igniterealtime.smack</groupId>
+      <artifactId>smack-resolver-dnsjava</artifactId>
+      <version>${xmpp.version}</version>
     </dependency>
   </dependencies>
 
