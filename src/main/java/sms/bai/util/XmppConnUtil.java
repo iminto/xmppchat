@@ -1,6 +1,7 @@
 package sms.bai.util;
 
 import org.jivesoftware.smack.AbstractXMPPConnection;
+import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.SmackException;
 import org.jivesoftware.smack.XMPPException;
 import org.jivesoftware.smack.chat2.Chat;
@@ -20,12 +21,16 @@ public class XmppConnUtil {
         String username= PropUtil.getString("username");
         String password=PropUtil.getString("password");
         String domain=PropUtil.getString("domain");
+        String host=PropUtil.getString("host");
+        Integer timeout=PropUtil.getInt("timeout");
         XMPPTCPConnectionConfiguration.Builder configBuilder = XMPPTCPConnectionConfiguration.builder();
         configBuilder.setUsernameAndPassword(username, password);
         try {
             configBuilder.setResource("xmppchat");
             configBuilder.setXmppDomain(domain);
-            configBuilder.setConnectTimeout(15000);
+            configBuilder.setConnectTimeout(timeout);
+            configBuilder.setSecurityMode(ConnectionConfiguration.SecurityMode.disabled);
+            configBuilder.setHost(host);
             connection = new XMPPTCPConnection(configBuilder.build());
             connection.connect();
             connection.login();
