@@ -6,13 +6,18 @@ import io.vertx.ext.web.handler.BodyHandler;
 
 public class MainVerticle extends AbstractVerticle {
 
-  @Override
-  public void start() {
-    SmsHandler smsHandler=new SmsHandler();
-    Router router = Router.router(vertx);
-    router.route().handler(BodyHandler.create());
-    router.post("/api/sms").handler(routingContext ->smsHandler.get(routingContext));
-    vertx.createHttpServer().requestHandler(router::accept).listen(8080);
-  }
+    @Override
+    public void start() {
+        SmsHandler smsHandler = new SmsHandler();
+        Router router = Router.router(vertx);
+        router.route().handler(BodyHandler.create());
+        router.get("/").handler(req -> {
+            req.response()
+                    .putHeader("content-type", "text/plain")
+                    .end("Hello from Vert.x!");
+        });
+        router.post("/api/sms").handler(routingContext -> smsHandler.get(routingContext));
+        vertx.createHttpServer().requestHandler(router::accept).listen(8080);
+    }
 
 }

@@ -18,7 +18,15 @@ PC端可安装Gajim，跨所有平台
 
 #### 运行
 ```
+mvn package
 mvn dependency:copy-dependencies
-
 java  -cp  $(echo target/dependency/*.jar | tr ' ' ':'):"target/classes" io.vertx.core.Launcher start sms.bai.starter.MainVerticle
+```
+
+### docker
+```
+#需要注意run.sh脚本的换行符
+docker build . -t xmppchat
+docker run xmppchat:latest
+
 ```
